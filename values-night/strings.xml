@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_chore">Enter a chore</string>
+    <string name="assigned_to">Assigned to...</string>
+    <string name="assinged_by">Assigned by...</string>
+    <string name="savechorebtn">Save a chore</string>
+</resources>
