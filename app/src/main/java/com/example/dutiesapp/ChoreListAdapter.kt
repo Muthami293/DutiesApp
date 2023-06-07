@@ -72,7 +72,9 @@ class ChoreListAdapter(private val list: ArrayList<Chore>, private val context: 
                     notifyItemRemoved(adapterPosition)
                 }
                 editButton.id ->{
+
                     editChore(chore)
+
                 }
 
             }
@@ -93,20 +95,28 @@ class ChoreListAdapter(private val list: ArrayList<Chore>, private val context: 
             var assignedBy = view.findViewById<EditText>(R.id.popAssignedById)
             var assignedTo = view.findViewById<EditText>(R.id.popAssignedToId)
             var saveButton = view.findViewById<Button>(R.id.popSaveChoreId)
+            saveButton.setText("Edit Chore")
 
             dialogBuilder = AlertDialog.Builder(context).setView(view)
             dialog = dialogBuilder!!.create()
             dialog!!.show()
 
             saveButton.setOnClickListener {
+
+
+
+                var name = choreName.text.toString().trim()
+                var aBy = assignedBy.text.toString().trim()
+                var aTo = assignedTo.text.toString().trim()
+
                 if (!TextUtils.isEmpty(choreName.text.toString().trim())&&
                     !TextUtils.isEmpty(assignedBy.text.toString().trim())&&
                     !TextUtils.isEmpty(assignedTo.text.toString().trim())
                 ){
 //                    var chore = Chore()
-                    chore.choreName = choreName.text.toString()
-                    chore.assignedBy = assignedBy.text.toString()
-                    chore.assignedTo = assignedTo.text.toString()
+                    chore.choreName = "Chore Name: $name"
+                    chore.assignedBy = "Assigned By: $aBy"
+                    chore.assignedTo = "Assigned To: $aTo"
 
                     dbHandler!!.updateChore(chore)
                     notifyItemChanged(adapterPosition, chore)
