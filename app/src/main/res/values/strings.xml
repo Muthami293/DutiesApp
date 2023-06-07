@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DutiesApp</string>
+    <string name="enter_chore">Enter a chore</string>
+    <string name="assigned_to">Assigned to...</string>
+    <string name="assinged_by">Assigned by...</string>
+    <string name="savechorebtn">Save a chore</string>
+</resources>
